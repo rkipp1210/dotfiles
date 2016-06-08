@@ -27,3 +27,6 @@ alias docker-stop-all='docker stop $(docker ps -q)'
 
 # remove all docker containers
 alias docker-rm-all='docker rm $(docker ps -a -q)'
+
+# stop and remove all containers
+alias docker-stop-rm='docker-stop-all && docker-rm-all'
