@@ -20,13 +20,22 @@ alias gitd='git diff'
 alias git-refresh='git pull && git submodule update --init --recursive'
 
 # remove untagget docker images
-alias docker-rmi-untag='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
+alias docker-rmi-untag="docker rmi $(docker images | grep "^<none>" | awk '{print $3}')"
 
 # stop all docker containers
 alias docker-stop-all='docker stop $(docker ps -q)'
+
+# kill all docker contaiers
+alias docker-kill-all='docker kill $(docker ps -q)'
 
 # remove all docker containers
 alias docker-rm-all='docker rm $(docker ps -a -q)'
 
 # stop and remove all containers
 alias docker-stop-rm='docker-stop-all && docker-rm-all'
+
+# kill and remove all containers
+alias docker-kill-rm='docker-kill-all && docker-rm-all'
+
+# pretty git branch graphs
+alias gitlg="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit"
