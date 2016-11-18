@@ -22,11 +22,20 @@ alias git-refresh='git pull && git submodule update --init --recursive'
 # copy working directory
 alias cwd='pwd | tr -d "\r\n" | pbcopy'
 
-# untar
-alias untar='tar xvf'
-
 # ipython notebook
 alias ipynb='jupyter notebook'
+
+# untar
+alias untar='tar -xvf'
+
+# create tar
+alias new-tar='tar -pczf'
+
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
+
+# git tab completion #
+source ~/.git-completion.bash
 
 # remove untagged docker images
 alias docker-rmi-untag="docker rmi $(docker images | grep "^<none>" | awk '{print $3}')"
