@@ -1,12 +1,19 @@
 # add bin folders to path
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
+PATH=/usr/local/sbin:$PATH
 export PATH
 
 # Go Stuff
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/gopath
 export PATH=$GOPATH/bin:$PATH
+
+# docker for mac
+export DOCKER_HOST="unix:///var/run/docker.sock"
+
+# VS Code
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Pythons
 export PATH=/anaconda/bin:$PATH
@@ -27,3 +34,9 @@ fi
 
 ### git tab completion ###
 source ~/.git-completion.bash
+
+# activate yhat aws credentials
+activate_yhat_aws
+
+# activate the python 3.5 conda env
+source activate py35

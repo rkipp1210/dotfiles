@@ -45,3 +45,6 @@ alias docker-rm-all='docker rm -f $(docker ps -a -q)'
 
 # pretty git branch graphs
 alias gitlg="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit"
+
+# start postgres
+alias start_postgres="postgres -D /usr/local/var/postgres/ &"
